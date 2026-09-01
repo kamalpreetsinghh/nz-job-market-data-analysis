@@ -32,3 +32,26 @@ This project will examine how online job-advertisement activity changes across i
 ├── README.md
 └── requirements.txt
 ```
+
+# Data sources
+
+This project uses official Jobs Online data published by New Zealand's Ministry of Business, Innovation and Employment (MBIE).
+
+Source page:  
+https://www.mbie.govt.nz/business-and-employment/employment-and-skills/labour-market-reports-data-and-analysis/jobs-online
+
+## Quarterly dataset
+
+- File: `jobs-online-all-vacancies-unadjusted-quarterly-june-2026.xlsx`
+- Coverage: through the June 2026 quarter
+- Format: Excel
+- Worksheet: `Data`
+- Purpose: regional, industry, occupation and skill-level analysis
+
+## Interpretation
+
+Jobs Online tracks changes in online job advertisements using index values. The values are not actual vacancy counts. The series is unadjusted, so seasonal patterns may remain in the data.
+
+## Raw-data policy
+
+Files in `data/raw/` are preserved without modification and excluded from Git. Cleaned and transformed datasets will be generated reproducibly from the source files.
