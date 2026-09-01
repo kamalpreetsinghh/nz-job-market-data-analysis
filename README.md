@@ -55,3 +55,13 @@ Jobs Online tracks changes in online job advertisements using index values. The 
 ## Raw-data policy
 
 Files in `data/raw/` are preserved without modification and excluded from Git. Cleaned and transformed datasets will be generated reproducibly from the source files.
+
+## Regional job-advertisement growth
+
+![Year-over-year regional job-advertisement index growth in 2026Q2](reports/figures/regional_yoy_growth_2026Q2.png)
+
+In 2026Q2, nine of ten regional groupings recorded annual growth.
+Canterbury led at 17.89%, while Gisborne Hawke's Bay declined by 0.51%.
+
+These growth rates describe changes in online job-advertisement indices,
+not regional vacancy counts.
