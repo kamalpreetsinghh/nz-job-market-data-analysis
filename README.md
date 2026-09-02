@@ -65,3 +65,17 @@ Canterbury led at 17.89%, while Gisborne Hawke's Bay declined by 0.51%.
 
 These growth rates describe changes in online job-advertisement indices,
 not regional vacancy counts.
+
+## Regional growth over time
+
+![Annual job-advertisement index growth in Auckland, Wellington and Canterbury from 2019Q1 to 2026Q2](reports/figures/regional_yoy_trends_2019Q1_2026Q2.png)
+
+All three regions recorded their highest annual growth in 2021Q2,
+partly reflecting the low 2020Q2 comparison base.
+
+Auckland had the largest one-year rebound (172.53%), but Wellington
+had the largest increase from 2019Q2 to 2021Q2 (26.70%, compared with
+Canterbury's 22.99% and Auckland's 18.07%).
+
+Growth rates should therefore be interpreted alongside index levels
+and clearly specified comparison periods.
