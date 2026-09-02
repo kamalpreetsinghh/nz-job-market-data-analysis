@@ -79,3 +79,14 @@ Canterbury's 22.99% and Auckland's 18.07%).
 
 Growth rates should therefore be interpreted alongside index levels
 and clearly specified comparison periods.
+
+### Recent growth versus historical peaks
+
+In 2026Q2, all ten regional indices remained below their observed
+historical peaks. Auckland, Wellington, Bay of Plenty, and
+Marlborough/NelsonTasman/West Coast showed positive annual growth
+but were still more than 50% below their respective peaks.
+
+Recent growth therefore does not necessarily indicate a return to
+earlier index levels. These comparisons use unadjusted indices,
+with peaks occurring in different quarters.
