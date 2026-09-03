@@ -90,3 +90,19 @@ but were still more than 50% below their respective peaks.
 Recent growth therefore does not necessarily indicate a return to
 earlier index levels. These comparisons use unadjusted indices,
 with peaks occurring in different quarters.
+
+## Industry job-advertisement growth
+
+![Annual job-advertisement index growth across ten industries in 2026Q2](reports/figures/industry_yoy_growth_2026Q2.png)
+
+Eight of ten industries recorded positive annual growth in 2026Q2.
+Manufacturing led at 19.15%, while Hospitality recorded the largest
+decline at 8.56%.
+
+IT ranked sixth for annual growth at 7.60%. However, its index remained
+at 55.2 against a December 2010 baseline of 100, illustrating that
+recent growth can coexist with a below-baseline index level.
+
+These unadjusted indices measure relative changes in online job
+advertisements, not vacancy counts or industry market shares.
+Comparisons with the December 2010 baseline span different seasons.
