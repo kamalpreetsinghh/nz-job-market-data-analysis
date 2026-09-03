@@ -106,3 +106,29 @@ recent growth can coexist with a below-baseline index level.
 These unadjusted indices measure relative changes in online job
 advertisements, not vacancy counts or industry market shares.
 Comparisons with the December 2010 baseline span different seasons.
+
+## Occupation and skill-level growth
+
+![Annual growth in occupation and detailed skill-level advertisement indices in 2026Q2](reports/figures/occupation_skill_yoy_growth_2026Q2.png)
+
+Seven of eight occupation groups recorded annual growth in 2026Q2.
+Machinery Drivers led at 19.84%, while Community & Personal Services
+declined by 0.18%.
+
+Four of five detailed skill categories grew. The `unskilled` category
+led at 12.12%, while the detailed `skilled` category declined by 0.30%.
+
+### Broad skill comparison
+
+| Series                  | Annual growth | Difference from overall growth |
+| ----------------------- | ------------: | -----------------------------: |
+| Skilled                 |         5.51% |        −1.21 percentage points |
+| Unskilled               |        10.21% |        +3.49 percentage points |
+| ALL (overall benchmark) |         6.72% |                              — |
+
+Broad `Skilled` combines highly skilled, skilled, and semi-skilled
+categories. Broad `Unskilled` combines low skilled and unskilled.
+The detailed and broad categories are therefore not interchangeable.
+
+These unadjusted indices measure relative changes in advertisements,
+not vacancy counts or employment shares.
