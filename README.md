@@ -191,8 +191,9 @@ throughout validation.
 
 | Model                          |   MAE |  RMSE |
 | ------------------------------ | ----: | ----: |
-| Ridge — alpha 100              | 18.83 | 24.01 |
 | Linear regression — 7 features | 19.38 | 23.24 |
+| Ridge — alpha 100              | 18.83 | 24.01 |
+| Random Forest                  | 19.13 | 24.73 |
 | Last-month naive               | 21.50 | 27.12 |
 | Seasonal naive                 | 40.21 | 43.03 |
 
