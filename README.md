@@ -191,13 +191,15 @@ throughout validation.
 
 | Model                          |   MAE |  RMSE |
 | ------------------------------ | ----: | ----: |
+| Ridge — alpha 100              | 18.83 | 24.01 |
 | Linear regression — 7 features | 19.38 | 23.24 |
-| Last-month naïve               | 21.50 | 27.12 |
-| Seasonal naïve                 | 40.21 | 43.03 |
+| Last-month naive               | 21.50 | 27.12 |
+| Seasonal naive                 | 40.21 | 43.03 |
 
-Errors are measured in index points; lower is better. Linear regression
-reduced validation MAE by approximately 9.9% and RMSE by 14.3% relative
-to last-month naïve.
+Errors are measured in index points; lower is better.
+Ridge achieved the lowest validation MAE among the evaluated models.
+Linear regression reduced validation MAE by approximately 9.9% and
+RMSE by 14.3% relative to last-month naive.
 
 These are preliminary validation results. Final test performance has
 not been evaluated.
