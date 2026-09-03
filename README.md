@@ -132,3 +132,87 @@ The detailed and broad categories are therefore not interchangeable.
 
 These unadjusted indices measure relative changes in advertisements,
 not vacancy counts or employment shares.
+
+## Monthly data and forecasting
+
+The forecasting phase uses MBIE's monthly Jobs Online dataset,
+covering May 2007–July 2026. It contains 231 consecutive monthly
+observations.
+
+The monthly indices use May 2007 as their baseline, while the quarterly
+indices use December 2010. The datasets are analysed separately;
+their index levels are not directly compared.
+
+### Data validation
+
+Checks confirmed a complete monthly timeline, unique dates, and no
+missing source values.
+
+Annual growth was independently calculated from the published overall
+index. The first 12 calculated values remain missing because the file
+does not contain preceding-year observations.
+
+The supplied annual-change field was preserved separately. Its largest
+absolute difference from the independently calculated series was
+approximately 0.459 percentage points in April 2021. The cause of this
+discrepancy has not been established.
+
+### Forecasting objective
+
+Predict the next month's overall job-advertisement index—not vacancy
+counts—using preceding observations once published.
+
+The initial model uses seven features:
+
+- Index lags of 1, 2, 3, and 12 months
+- A trailing 12-month mean, excluding the target month
+- Sine and cosine encodings of the target calendar month
+
+A three-month rolling mean was removed because it duplicated
+information in lags 1, 2, and 3.
+
+### Evaluation design
+
+| Split         | Target months         | Observations |
+| ------------- | --------------------- | -----------: |
+| Training      | May 2008–July 2022    |          171 |
+| Validation    | August 2022–July 2024 |           24 |
+| Reserved test | August 2024–July 2026 |           24 |
+
+The first 12 source months provide historical inputs but lack sufficient
+history to serve as training targets.
+
+Evaluation is chronological, without random shuffling. Predictions are
+made one month ahead, with prior-month observations incorporated as
+they become available. Linear regression coefficients remain fixed
+throughout validation.
+
+### Preliminary validation results
+
+| Model                          |   MAE |  RMSE |
+| ------------------------------ | ----: | ----: |
+| Linear regression — 7 features | 19.38 | 23.24 |
+| Last-month naïve               | 21.50 | 27.12 |
+| Seasonal naïve                 | 40.21 | 43.03 |
+
+Errors are measured in index points; lower is better. Linear regression
+reduced validation MAE by approximately 9.9% and RMSE by 14.3% relative
+to last-month naïve.
+
+These are preliminary validation results. Final test performance has
+not been evaluated.
+
+### Forecasting limitations
+
+- The analysis uses one historical data snapshot rather than archived
+  releases available at each historical forecast date.
+- Publication delays mean an observation-month-ahead prediction is
+  not necessarily issued before the target month begins.
+- The series is unadjusted and may contain seasonal patterns.
+- Validation improvements do not guarantee future performance.
+
+### Monthly source file
+
+`jol-monthly-unadjusted-series-from-may-2007-july-2026.csv`
+
+[Official MBIE Jobs Online source](https://www.mbie.govt.nz/business-and-employment/employment-and-skills/labour-market-reports-data-and-analysis/jobs-online)
