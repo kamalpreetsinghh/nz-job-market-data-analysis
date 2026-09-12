@@ -32,6 +32,32 @@ FEATURE_COLUMNS = [
 
 
 def build_next_month_features(target):
+    if not isinstance(target.index, pd.DatetimeIndex):
+        raise TypeError("target must use a DatetimeIndex")
+
+    if target.index.has_duplicates:
+        raise ValueError("target contains duplicate months")
+
+    if not target.index.is_monotonic_increasing:
+        raise ValueError("target dates must be in chronological order")
+
+    if target.isna().any():
+        raise ValueError("target contains missing values")
+
+    expected_dates = pd.date_range(
+        start=target.index.min(),
+        end=target.index.max(),
+        freq="MS",
+    )
+
+    if not target.index.equals(expected_dates):
+        raise ValueError(
+            "target must contain consecutive monthly observations")
+
+    if len(target) < 12:
+        raise ValueError(
+            "target must contain at least 12 monthly observations")
+
     next_month = (
         target.index.max()
         + pd.offsets.MonthBegin(1)

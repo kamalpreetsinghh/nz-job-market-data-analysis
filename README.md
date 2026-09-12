@@ -287,3 +287,17 @@ The operational model includes post-test data and therefore does not
 inherit the reported test metrics. Those metrics belong to the frozen
 model trained through July 2024.
 ```
+
+## Automated Testing
+
+The project uses `pytest` to test the forecasting feature pipeline. The tests verify that:
+
+- one-month-ahead lag, rolling-average and seasonal features are calculated correctly;
+- missing target values are rejected;
+- gaps in the monthly time series are rejected.
+
+Run the test suite from the project root:
+
+```bash
+python -m pytest -v
+```
