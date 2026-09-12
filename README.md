@@ -187,7 +187,7 @@ made one month ahead, with prior-month observations incorporated as
 they become available. Linear regression coefficients remain fixed
 throughout validation.
 
-### Preliminary validation results
+### Validation results and model selection
 
 | Model                          |   MAE |  RMSE |
 | ------------------------------ | ----: | ----: |
@@ -222,7 +222,7 @@ not been evaluated.
 
 ### Validation forecast behaviour
 
-![Actual monthly index compared with Ridge and last-month naïve validation forecasts](reports/figures/monthly_validation_forecasts.png)
+![Actual monthly index compared with Ridge and last-month naive validation forecasts](reports/figures/monthly_validation_forecasts.png)
 
 The selected Ridge model overpredicted 19 of 24 validation months and
 had a mean signed error of +14.05 index points. Its largest errors
@@ -232,3 +232,28 @@ did not fully capture.
 Although Ridge achieved the lowest overall validation MAE, these
 diagnostics show that a single summary metric does not describe all
 forecast behaviour.
+
+### Final held-out test results
+
+After model selection was complete, Ridge was retrained using training
+and validation observations through July 2024. It was then evaluated
+once on the reserved August 2024–July 2026 test period.
+
+| Model             | Test MAE | Test RMSE | Mean signed error |
+| ----------------- | -------: | --------: | ----------------: |
+| Ridge — alpha 100 | **9.14** | **11.88** |             +3.81 |
+| Last-month naive  |    12.33 |     16.58 |             −0.02 |
+| Seasonal naive    |    16.13 |     22.51 |             +9.25 |
+
+Ridge reduced MAE by **25.84%** and RMSE by **28.35%** relative to
+last-month naive. Errors are measured in index points; lower MAE and
+RMSE indicate better accuracy.
+
+![Actual monthly index compared with Ridge and last-month naive test forecasts](reports/figures/monthly_test_forecasts.png)
+
+Ridge produced smoother predictions and outperformed both naive
+benchmarks across the 24 test months. It retained a modest
+overprediction tendency and did not capture every sharp monthly change.
+
+These results apply to the defined historical test period and do not
+guarantee future forecasting performance.
