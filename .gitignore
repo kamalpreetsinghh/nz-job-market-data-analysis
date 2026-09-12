@@ -25,6 +25,7 @@ Thumbs.db
 data/raw/*
 data/processed/*
 models/*
+!models/README.md
 
 # Keep directory placeholders
 !data/raw/.gitkeep

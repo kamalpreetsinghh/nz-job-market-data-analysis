@@ -257,3 +257,33 @@ overprediction tendency and did not capture every sharp monthly change.
 
 These results apply to the defined historical test period and do not
 guarantee future forecasting performance.
+
+### Reproduce the next-month forecast
+
+After downloading the source data and running the data-preparation
+and forecasting notebooks in order, activate the project environment:
+
+```bash
+source .venv/bin/activate
+python src/forecasting.py
+```
+
+### Add the notebook conclusion
+
+```markdown
+### Conclusion: Model persistence and future prediction
+
+After completing final test evaluation, the frozen Ridge specification
+was retrained on all 219 model-ready observations through July 2026.
+
+The operational pipeline was saved with Joblib and successfully
+reloaded. Reloaded and in-memory models produced matching predictions.
+
+Using observations available through July 2026, the operational model
+forecast an August 2026 overall index of 104.56. This is an index
+forecast, not a vacancy count or growth percentage.
+
+The operational model includes post-test data and therefore does not
+inherit the reported test metrics. Those metrics belong to the frozen
+model trained through July 2024.
+```
