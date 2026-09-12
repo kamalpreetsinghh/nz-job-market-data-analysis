@@ -219,3 +219,16 @@ not been evaluated.
 `jol-monthly-unadjusted-series-from-may-2007-july-2026.csv`
 
 [Official MBIE Jobs Online source](https://www.mbie.govt.nz/business-and-employment/employment-and-skills/labour-market-reports-data-and-analysis/jobs-online)
+
+### Validation forecast behaviour
+
+![Actual monthly index compared with Ridge and last-month naïve validation forecasts](reports/figures/monthly_validation_forecasts.png)
+
+The selected Ridge model overpredicted 19 of 24 validation months and
+had a mean signed error of +14.05 index points. Its largest errors
+occurred around sharp monthly changes that its smoother predictions
+did not fully capture.
+
+Although Ridge achieved the lowest overall validation MAE, these
+diagnostics show that a single summary metric does not describe all
+forecast behaviour.
