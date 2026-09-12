@@ -96,7 +96,32 @@ def build_next_month_features(target):
     return features[FEATURE_COLUMNS]
 
 
+def check_required_files(data_path, model_path):
+    missing_files = [
+        path for path in (data_path, model_path)
+        if not path.exists()
+    ]
+
+    if missing_files:
+        missing_list = "\n".join(
+            f"- {path}" for path in missing_files
+        )
+
+        raise FileNotFoundError(
+            "Forecast prerequisites are missing:\n"
+            f"{missing_list}\n\n"
+            "Place the MBIE source files in data/raw/ and run "
+            "notebooks/05_monthly_data_inspection.ipynb followed by "
+            "notebooks/06_monthly_forecasting.ipynb."
+        )
+
+
 def main():
+    try:
+        check_required_files(DATA_PATH, MODEL_PATH)
+    except FileNotFoundError as error:
+        raise SystemExit(str(error)) from None
+
     monthly = pd.read_csv(
         DATA_PATH,
         parse_dates=["Date"],

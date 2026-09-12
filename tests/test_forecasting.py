@@ -5,6 +5,7 @@ import pytest
 from src.forecasting import (
     FEATURE_COLUMNS,
     build_next_month_features,
+    check_required_files,
 )
 
 
@@ -64,3 +65,14 @@ def test_rejects_missing_month():
 
     with pytest.raises(ValueError, match="consecutive monthly"):
         build_next_month_features(target)
+
+
+def test_rejects_missing_forecast_artifacts(tmp_path):
+    missing_data = tmp_path / "monthly_jobs_online.csv"
+    missing_model = tmp_path / "ridge_forecaster.joblib"
+
+    with pytest.raises(
+        FileNotFoundError,
+        match="Forecast prerequisites are missing",
+    ):
+        check_required_files(missing_data, missing_model)
